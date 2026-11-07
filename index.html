@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northwest Autumn Mixed Doubles 2026 – Team Results</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f6f5;
+    --surface: #ffffff;
+    --text: #1d2421;
+    --muted: #5b6661;
+    --border: #d5dcd8;
+    --head-bg: #1f4d3a;
+    --head-text: #ffffff;
+    --alt-row: #f1f5f3;
+    --link: #1a6b4f;
+    --win: #14532d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101614;
+      --surface: #1a221f;
+      --text: #e5ece8;
+      --muted: #9daaa3;
+      --border: #2e3a35;
+      --head-bg: #2b5f49;
+      --head-text: #f1f7f3;
+      --alt-row: #172019;
+      --link: #7fd1ad;
+      --win: #9ee6c0;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 12px 16px;
+  }
+  header h1 {
+    margin: 0 0 4px;
+    font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  }
+  .legend {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .legend strong { color: var(--text); }
+  h2 {
+    font-size: 1.05rem;
+    margin: 18px 0 4px;
+  }
+  .caption {
+    margin: 0 0 6px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  thead th {
+    background: var(--head-bg);
+    color: var(--head-text);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(even) td { background: var(--alt-row); }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Match results table: 4 compact columns */
+  .main-table col.c-day   { width: 17%; }
+  .main-table col.c-b     { width: 36%; }
+  .main-table col.c-c     { width: 33%; }
+  .main-table col.c-link  { width: 14%; }
+
+  .line { display: block; padding: 1px 0; }
+  .muted { color: var(--muted); }
+  .win { font-weight: 700; color: var(--win); }
+  .main-table .line.muted { font-size: 0.85rem; }
+
+  /* Standings: side by side on wide screens, stacked on small ones */
+  .standings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 16px;
+    align-items: start;
+  }
+  .standings th:not(:first-child),
+  .standings td:not(:first-child) { text-align: right; }
+  .standings th, .standings td { padding: 6px 10px; }
+
+  td a {
+    color: var(--link);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 900px) {
+    .standings-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Phones: each match day becomes a compact card, no sideways scrolling */
+  @media (max-width: 720px) {
+    .container { padding: 12px 8px 12px; }
+    .main-table thead { display: none; }
+    .main-table, .main-table tbody, .main-table tr, .main-table td {
+      display: block;
+      width: 100%;
+    }
+    .main-table col { display: none; }
+    .table-wrap.main-wrap { border: none; background: none; overflow: visible; }
+    .main-table tr {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      margin: 0 0 10px;
+      overflow: hidden;
+    }
+    .main-table td {
+      border: none;
+      padding: 5px 12px;
+      background: none !important;
+    }
+    .main-table td:first-child { background: var(--head-bg) !important; color: var(--head-text); padding: 8px 12px; }
+    .main-table td:first-child .line { color: var(--head-text); opacity: 0.9; }
+    .main-table td[data-label]::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 1px;
+    }
+    .main-table td:last-child { padding-bottom: 10px; }
+    .standings th, .standings td { padding: 6px 6px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Northwest Autumn Mixed Doubles 2026 – Team Results</h1>
+    <p class="legend">
+      <strong>Club abbreviations:</strong>
+      STR = Strabane · LIM = Limavady · LTK = Letterkenny · DER = City of Derry · OMG = Omagh · BTH = Butt Hall
+    </p>
+  </header>
+
+  <h2>Match Day Results</h2>
+  <div class="table-wrap main-wrap">
+    <table class="main-table">
+      <colgroup>
+        <col class="c-day">
+        <col class="c-b">
+        <col class="c-c">
+        <col class="c-link">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Match Day</th>
+          <th>B teams – matches won</th>
+          <th>C teams – matches won</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>Match Day 1</strong>
+            <span class="line muted">Saturday 26 September 2026</span>
+            <span class="line muted">Sunday 27 September 2026</span>
+          </td>
+          <td data-label="B teams – matches won">
+            <span class="line"><span class="win">Strabane 3</span> – Limavady 1</span>
+            <span class="line"><span class="win">Letterkenny 3</span> – City of Derry 1</span>
+            <span class="line">Omagh 2 – Butt Hall 2</span>
+          </td>
+          <td data-label="C teams – matches won" class="muted">No C-team matches</td>
+          <td data-label="Details">
+            <a href="https://ti.tournamentsoftware.com/tournament/6ddd3ed7-0916-441e-93b0-d59b000ebb00/Matches" target="_blank" rel="noopener noreferrer">View results ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Match Day 2</strong>
+            <span class="line muted">Saturday 3 October 2026</span>
+            <span class="line muted">Sunday 4 October 2026</span>
+          </td>
+          <td data-label="B teams – matches won">
+            <span class="line">Butt Hall 2 – Letterkenny 2</span>
+            <span class="line"><span class="win">Omagh 3</span> – Limavady 1</span>
+            <span class="line"><span class="win">City of Derry 3</span> – Strabane 1</span>
+          </td>
+          <td data-label="C teams – matches won">
+            <span class="line">Strabane 2 – Butt Hall 2</span>
+            <span class="line"><span class="win">Letterkenny 3</span> – Omagh 1</span>
+            <span class="line"><span class="win">City of Derry 4</span> – Limavady 0</span>
+          </td>
+          <td data-label="Details">
+            <a href="https://ti.tournamentsoftware.com/tournament/7bf85808-d6fa-4aeb-a546-09f291ccd83b/matches/20261003" target="_blank" rel="noopener noreferrer">View results ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Match Day 3</strong>
+            <span class="line muted">Saturday 10 October 2026</span>
+            <span class="line muted">Sunday 11 October 2026</span>
+          </td>
+          <td data-label="B teams – matches won">
+            <span class="line">Omagh 2 – City of Derry 2</span>
+            <span class="line">Letterkenny 2 – Strabane 2</span>
+            <span class="line"><span class="win">Limavady 3</span> – Butt Hall 1</span>
+          </td>
+          <td data-label="C teams – matches won">
+            <span class="line"><span class="win">Limavady 3</span> – Butt Hall 1</span>
+            <span class="line"><span class="win">Strabane 3</span> – Letterkenny 1</span>
+            <span class="line">Omagh 2 – City of Derry 2</span>
+          </td>
+          <td data-label="Details">
+            <a href="https://ti.tournamentsoftware.com/tournament/77ba18f5-34ef-4fc1-b60b-9379da9a93ba/matches/20261010" target="_blank" rel="noopener noreferrer">View results ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Match Day 4</strong>
+            <span class="line muted">Saturday 17 October 2026</span>
+            <span class="line muted">Sunday 18 October 2026</span>
+          </td>
+          <td data-label="B teams – matches won">
+            <span class="line">Strabane 2 – Butt Hall 2</span>
+            <span class="line"><span class="win">Letterkenny 3</span> – Omagh 1</span>
+            <span class="line"><span class="win">Limavady 3</span> – City of Derry 1</span>
+          </td>
+          <td data-label="C teams – matches won">
+            <span class="line"><span class="win">City of Derry 3</span> – Strabane 1</span>
+            <span class="line">Omagh 2 – Limavady 2</span>
+          </td>
+          <td data-label="Details">
+            <a href="https://ti.tournamentsoftware.com/tournament/63991607-6a78-4c4d-9963-b5ee9ec24914/matches/20261018" target="_blank" rel="noopener noreferrer">View results ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Match Day 5</strong>
+            <span class="line muted">Sunday 25 October 2026</span>
+            <span class="line muted">Friday 30 October 2026</span>
+            <span class="line muted">Saturday 31 October 2026</span>
+            <span class="line muted">Sunday 1 November 2026</span>
+          </td>
+          <td data-label="B teams – matches won">
+            <span class="line"><span class="win">Omagh 3</span> – Strabane 1</span>
+            <span class="line">Butt Hall 2 – City of Derry 2</span>
+            <span class="line">Limavady 2 – Letterkenny 2</span>
+          </td>
+          <td data-label="C teams – matches won">
+            <span class="line"><span class="win">Omagh 3</span> – Butt Hall 1</span>
+            <span class="line"><span class="win">City of Derry 3</span> – Letterkenny 1</span>
+            <span class="line"><span class="win">Butt Hall 4</span> – Letterkenny 0</span>
+            <span class="line">Omagh 2 – Strabane 2</span>
+          </td>
+          <td data-label="Details">
+            <a href="https://ti.tournamentsoftware.com/tournament/a91f76f6-76d7-4252-b51c-d5f5d9844632/Matches" target="_blank" rel="noopener noreferrer">View results ↗</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Match Day 6</strong>
+            <span class="line muted">Saturday 7 November 2026</span>
+          </td>
+          <td data-label="B teams – matches won">
+            <span class="line"><span class="win">Letterkenny 4</span> – City of Derry 0</span>
+          </td>
+          <td data-label="C teams – matches won" class="muted">No C-team matches</td>
+          <td data-label="Details">
+            <a href="https://ti.tournamentsoftware.com/tournament/a0df9c17-618f-44e9-86ef-d6a84abb9776/Matches" target="_blank" rel="noopener noreferrer">View results ↗</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="standings-grid">
+
+    <div>
+      <h2>B Team League Standings</h2>
+      <p class="caption">Points: 2 for a tie won, 1 for a draw, 0 for a tie lost. A tie goes to the club that wins more doubles matches.</p>
+      <div class="table-wrap">
+        <table class="standings">
+          <thead>
+            <tr>
+              <th>Club</th>
+              <th title="Number of matches played">Played</th>
+              <th title="Number of matches won">Won</th>
+              <th title="Number of matches lost">Lost</th>
+              <th title="Number of draws">Draws</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Letterkenny</td><td>6</td><td>3</td><td>0</td><td>3</td><td><strong>9</strong></td></tr>
+            <tr><td>Omagh</td><td>5</td><td>2</td><td>1</td><td>2</td><td><strong>6</strong></td></tr>
+            <tr><td>Limavady</td><td>5</td><td>2</td><td>2</td><td>1</td><td><strong>5</strong></td></tr>
+            <tr><td>Butt Hall</td><td>5</td><td>0</td><td>1</td><td>4</td><td><strong>4</strong></td></tr>
+            <tr><td>City of Derry</td><td>6</td><td>1</td><td>3</td><td>2</td><td><strong>4</strong></td></tr>
+            <tr><td>Strabane</td><td>5</td><td>1</td><td>2</td><td>2</td><td><strong>4</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h2>C Team League Standings</h2>
+      <p class="caption">Points: 2 for a tie won, 1 for a draw, 0 for a tie lost. A tie goes to the club that wins more doubles matches.</p>
+      <div class="table-wrap">
+        <table class="standings">
+          <thead>
+            <tr>
+              <th>Club</th>
+              <th title="Number of matches played">Played</th>
+              <th title="Number of matches won">Won</th>
+              <th title="Number of matches lost">Lost</th>
+              <th title="Number of draws">Draws</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>City of Derry</td><td>4</td><td>3</td><td>0</td><td>1</td><td><strong>7</strong></td></tr>
+            <tr><td>Omagh</td><td>5</td><td>1</td><td>1</td><td>3</td><td><strong>5</strong></td></tr>
+            <tr><td>Strabane</td><td>4</td><td>1</td><td>1</td><td>2</td><td><strong>4</strong></td></tr>
+            <tr><td>Butt Hall</td><td>4</td><td>1</td><td>2</td><td>1</td><td><strong>3</strong></td></tr>
+            <tr><td>Limavady</td><td>3</td><td>1</td><td>1</td><td>1</td><td><strong>3</strong></td></tr>
+            <tr><td>Letterkenny</td><td>4</td><td>1</td><td>3</td><td>0</td><td><strong>2</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
